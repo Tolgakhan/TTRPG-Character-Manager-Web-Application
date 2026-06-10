@@ -1,7 +1,4 @@
-/**
- * Doom Grimoire — Client-side UI helpers
- * Manages dynamic ability/skill rows on character create & edit forms.
- */
+
 
 (function () {
     'use strict';
@@ -13,9 +10,7 @@
         return;
     }
 
-    /**
-     * Build a single ability row with name and rank inputs.
-     */
+    
     function createAbilityRow(name = '', rank = 0) {
         const row = document.createElement('div');
         row.className = 'ability-row row g-2 align-items-end mb-2';
@@ -48,7 +43,7 @@
         return row;
     }
 
-    /** Prevent XSS when injecting values into innerHTML */
+   
     function escapeHtml(str) {
         const div = document.createElement('div');
         div.textContent = str;
@@ -59,7 +54,7 @@
         container.appendChild(createAbilityRow());
     });
 
-    // Wire up remove buttons on pre-rendered rows (edit page)
+   
     container.querySelectorAll('.remove-ability-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
             const rows = container.querySelectorAll('.ability-row');
